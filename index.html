@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 6 Months Yashvi! ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ff4d6d;
+            --secondary-pink: #ff758f;
+            --soft-white: #fff0f3;
+            --heart-red: #c9184a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--soft-white);
+            color: var(--heart-red);
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .page {
+            display: none;
+            min-height: 100vh;
+            width: 100%;
+            padding: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1, h2 {
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: var(--primary-pink);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+            transition: transform 0.3s ease;
+            margin-top: 30px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background-color: var(--heart-red);
+        }
+
+        /* --- Page 1 Styles --- */
+        #heart-container {
+            font-size: 100px;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            user-select: none;
+        }
+
+        .heart-burst {
+            animation: burst 0.5s forwards;
+        }
+
+        @keyframes burst {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+
+        /* --- Petal Animation --- */
+        .petal {
+            position: fixed;
+            top: -10%;
+            background-color: #ffb3c1;
+            border-radius: 150% 0 150% 0;
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 999;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { top: -10%; transform: translateX(0) rotate(0deg); }
+            100% { top: 110%; transform: translateX(100px) rotate(360deg); }
+        }
+
+        /* --- Page 2 Stats --- */
+        .stat-box {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 10px;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat-num {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            color: var(--primary-pink);
+        }
+
+        /* --- Gallery Styles --- */
+        .gallery-container {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        .moment-card {
+            margin-bottom: 50px;
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .moment-card img {
+            width: 100%;
+            aspect-ratio: 9/16;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .caption {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* --- Quotes Page --- */
+        .quote {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid var(--primary-pink);
+            max-width: 80%;
+            font-style: italic;
+        }
+
+        /* --- Star Page --- */
+        .star-box {
+            border: 2px solid gold;
+            padding: 30px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            max-width: 90%;
+        }
+
+        .star-title { color: #ffd700; font-family: 'Dancing Script', cursive; font-size: 2rem; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Page 1: The Burst -->
+    <section id="page1" class="page active">
+        <div id="heart-container" onclick="handleHeartTap()">❤️</div>
+        <h2 id="tap-text">Tap 6 times to burst❤️</h2>
+        <div id="burst-message" style="display:none;">
+            <h1 style="font-size: 3rem;">Happy 6 months, my love! I love you!❤️</h1>
+            <button onclick="nextPage(2)">Continue Our Journey</button>
+        </div>
+    </section>
+
+    <!-- Page 2: Stats -->
+    <section id="page2" class="page">
+        <h1>A Journey Through Time</h1>
+        <p style="max-width: 80%; margin-bottom: 30px;">It feels like yesterday, and also like a lifetime. Every moment has been precious.</p>
+        
+        <div class="stat-box">
+            <span class="stat-num">6</span>
+            Months Together
+        </div>
+        <div class="stat-box">
+            <span class="stat-num">182</span>
+            Days of Laughter
+        </div>
+        <div class="stat-box">
+            <span class="stat-num">4,368</span>
+            Hours of Joy
+        </div>
+
+        <p style="margin-top: 20px; font-weight: bold;">Happy anniversary! Let's cherish these memories and create many more❤️.</p>
+        <button onclick="nextPage(3)">see our moments❤️</button>
+    </section>
+
+    <!-- Page 3: Photo Gallery -->
+    <section id="page3" class="page" style="display:none; overflow-y: auto; justify-content: flex-start;">
+        <h1 style="margin-top: 40px;">Our Moments</h1>
+        
+        <div class="gallery-container">
+            <!-- Photo 1 -->
+            <div class="moment-card">
+                <img src="photo1.jpg" alt="Insert Photo Here">
+                <p class="caption">Our first talk ever❤️</p>
+            </div>
+            <!-- Photo 2 -->
+            <div class="moment-card">
+                <img src="photo2.jpg" alt="Insert Photo Here">
+                <p class="caption">Our reeling phase❤️</p>
+            </div>
+            <!-- Photo 3 -->
+            <div class="moment-card">
+                <img src="photo3.jpg" alt="Insert Photo Here">
+                <p class="caption">My new and the most beloved address (in your heart❤️)</p>
+            </div>
+            <!-- Photo 4 -->
+            <div class="moment-card">
+                <img src="photo4.jpg" alt="Insert Photo Here">
+                <p class="caption">My favourite super BFF</p>
+            </div>
+            <!-- Photo 5: Collage -->
+            <div class="moment-card">
+                <img src="photo5.jpg" alt="Insert Collage Here">
+                <p class="caption">my favourite you and the best person I had ever met in my whole life</p>
+            </div>
+        </div>
+
+        <button onclick="nextPage(4)" style="margin-bottom: 50px;">why I love you❤️</button>
+    </section>
+
+    <!-- Page 4: Quotes -->
+    <section id="page4" class="page">
+        <h1>It's impossible to list everything, but here's a start.</h1>
+        <div class="quote">"In all the world, there is no heart for me like yours."</div>
+        <div class="quote">"Six months down, a lifetime to go. You are my greatest adventure."</div>
+        <div class="quote">"I love you not only for what you are, but for what I am when I am with you."</div>
+        <div class="quote">"Every day with you is my new favorite day."</div>
+        <div class="quote">"You are the piece of me I didn't know was missing."</div>
+        <div class="quote">"My heart is and always will be yours."</div>
+
+        <button onclick="nextPage(5)">I have a surprise for you</button>
+    </section>
+
+    <!-- Page 5: Anticipation -->
+    <section id="page5" class="page">
+        <h1>Are you excited to see next?</h1>
+        <div style="display: flex; gap: 20px;">
+            <button onclick="nextPage(6)">Yes</button>
+            <button onclick="nextPage(6)">Tap on yes</button>
+        </div>
+    </section>
+
+    <!-- NEW Page 6: Poem -->
+    <section id="page6" class="page">
+        <h1>Few lines for my Yashuuu❤️❤️</h1>
+        <p style="font-size: 1.5rem; line-height: 2; font-style: italic; max-width: 80%; font-family: 'Dancing Script', cursive;">
+            Chand Se Pyaari Chandni<br>
+            Chandni Se Pyaari Raat<br>
+            Raat Se Pyaari Zindagi<br>
+            Zindagi Se Pyaari Aap🥰🥰
+        </p>
+        <button onclick="nextPage(7)">Wanna See Next❤️❤️</button>
+    </section>
+
+    <!-- Page 7: Star Registration (Shifted) -->
+    <section id="page7" class="page">
+        <div class="star-box">
+            <h2 class="star-title">Yashvi</h2>
+            <p style="margin: 15px 0;">Officially registered in the Parakram-Yashvi Celestial Catalog.</p>
+            <p style="font-size: 0.9rem; line-height: 1.6;">This star, known for its exceptional brilliance and beauty, will now shine forever under your name.</p>
+            <p style="margin-top: 20px;">With all my love,<br><strong>Parakram</strong></p>
+        </div>
+        <button onclick="nextPage(8)">Final Message ❤️</button>
+    </section>
+
+    <!-- Page 8: Final Page (Shifted) -->
+    <section id="page8" class="page">
+        <h1 style="font-size: 4rem;">♡</h1>
+        <h2>To The Next Six Months, and Forever</h2>
+        <p style="max-width: 85%; line-height: 1.8;">
+            Happy 6-month anniversary, Yashvi. Thank you for making my life a beautiful adventure. 
+            The best is yet to come, and I can't wait to experience it all with you.
+        </p>
+        <p style="margin-top: 30px; font-weight: bold; font-size: 1.2rem;">With all my love,<br>Parakram</p>
+    </section>
+
+    <script>
+        let tapCount = 0;
+
+        function handleHeartTap() {
+            tapCount++;
+            const heart = document.getElementById('heart-container');
+            
+            // Heart bounce effect
+            heart.style.transform = `scale(${1 + tapCount * 0.1})`;
+
+            if (tapCount >= 6) {
+                heart.classList.add('heart-burst');
+                setTimeout(() => {
+                    heart.style.display = 'none';
+                    document.getElementById('tap-text').style.display = 'none';
+                    document.getElementById('burst-message').style.display = 'block';
+                    startPetals();
+                }, 500);
+            }
+        }
+
+        function nextPage(pageNumber) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+                page.style.display = 'none';
+            });
+            
+            // Show requested page
+            const nextPage = document.getElementById('page' + pageNumber);
+            nextPage.style.display = 'flex';
+            setTimeout(() => {
+                nextPage.classList.add('active');
+            }, 10);
+
+            // Scroll to top
+            window.scrollTo(0,0);
+        }
+
+        function startPetals() {
+            setInterval(createPetal, 300);
+        }
+
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            
+            // Random styling
+            const sizes = [10, 15, 20];
+            const size = sizes[Math.floor(Math.random() * sizes.length)];
+            petal.style.width = size + 'px';
+            petal.style.height = size + 'px';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            document.body.appendChild(petal);
+
+            // Remove petal after animation
+            setTimeout(() => {
+                petal.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
